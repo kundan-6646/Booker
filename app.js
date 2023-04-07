@@ -86,6 +86,41 @@ app.get('/train/:trainNumber', function(req, res) {
 });
 
 
+//This route is reserving/un-reserving some seats
+app.get('/book-some-seats/:trainNumber', function(req, res) {
+    const trainNumber = req.params.trainNumber;
+
+    Train.find({}).then(async foundTrains => {
+
+        //finding train using train number
+        let trainIdx = foundTrains.findIndex(t => {
+            return t.trainNumber === trainNumber;
+        });
+
+        let seats = foundTrains[trainIdx].seats;
+        const seatsToBook = [56, 57, 58, 59, 60, 61, 62, 49, 50, 51, 52, 35, 36, 37, 38, 39];
+        const seatsTounBook = [7, 8, 9, 13]
+        seats.forEach(s => {
+            seatsToBook.forEach(sn => {
+                if(s.seatNumber === sn) {
+                    s.isBooked = true;
+                }
+            });
+            seatsTounBook.forEach(sn => {
+                if(s.seatNumber === sn) {
+                    s.isBooked = false;
+                }
+            });
+        });
+
+
+        foundTrains[trainIdx].save();
+
+        res.redirect('/train/' + trainNumber);
+    });
+});
+
+
 /* This Route is creating a train with single coach having 80 seats.
 *  Created first train using this route  */
 app.get('/create', function(req, res) {
@@ -218,7 +253,7 @@ function getAvailableSeats(seats, userSeatsCount) {
                 unReservedSeats.push(seatsMatrix[i][j].seatNumber);
 
                 if(unReservedSeats.length >= userSeatsCount) return unReservedSeats;
-            }
+            }else break;
         }
     }
 

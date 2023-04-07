@@ -19,7 +19,7 @@ This is a web-app to book train tickets
 
 ## Database Structure
 
-[![Booker.com]](https://frail-school-uniform-newt.cyclic.app/)
+[![Booker.com](Demo)](https://frail-school-uniform-newt.cyclic.app/)
 - `MongoDB` is used in backend as database
 - Mongoose schemas
   - Train: A Train having different attributes - Name, Train Number, Seats[]

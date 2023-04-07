@@ -1,0 +1,155 @@
+body {
+    margin: 0;
+    box-sizing: border-box;
+    background-color: #000 !important;
+}
+
+main {
+    color: #fff;
+    padding: 2rem 0;
+}
+
+h2, h3 {
+    padding: 10px 0;
+    text-align: center;
+}
+
+.container {
+    border-radius: 12px;
+    background-color: #262626;
+    position: relative;
+}
+
+.home-btn {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+}
+
+.header{
+    height: 3rem;
+    background-color: #FECB03;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.bold-text {
+    color: #000;
+    font-weight: bold;
+    margin-right: 1rem;
+}
+
+.data {
+    padding: 2rem 0;
+    height: auto;
+}
+
+label {
+    color: #FECB03;
+}
+
+.seat-counter {
+    width: 10rem;
+    height: 3rem;
+    display: flex;
+}
+
+.counter-item {
+    width: 3rem !important;
+    height: 3rem;
+    border: 1px solid #fff;
+    font-size: 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+#seatsCount {
+    color: #000;
+    padding: 10px;
+}
+
+.alert {
+    opacity: 0;
+}
+
+.highlight {
+    color: chartreuse;
+}
+
+.train-icon {
+    margin-right: 10px;
+}
+
+.hl {
+    color: #FECB03;
+}
+
+.seat-status {
+    display: flex;
+    height: 3rem;
+    justify-content: flex-end;
+}
+
+.seat-status-item {
+    display: flex;
+    margin-right: 1rem;
+}
+
+.seat-status-box {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 5px;
+    border-radius: 50%;
+}
+
+.booked {
+    background-color: gray;
+}
+
+.vacant {
+    background-color: #fff;
+}
+
+.user-seats {
+    background-color: chartreuse;
+}
+
+.coach-container {
+    justify-content: center;
+}
+
+.coach {
+    background-color: #fff;
+    padding: 1rem;
+    color: black;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+}
+
+.coach-row {
+    display: flex;
+    height: 1rem;
+    justify-content: space-around;
+    margin: 1rem 0;
+}
+
+.coach-seat {
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 6px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #262626;
+}
+
+.train-info {
+    border-bottom: 1px solid gray;
+    text-align: center;
+    font-style: italic;
+}

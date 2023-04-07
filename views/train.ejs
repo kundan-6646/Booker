@@ -1,0 +1,80 @@
+<%- include("partials/header") -%>
+
+<main>
+    <div class="container">
+        <a href="/"><button class="btn btn-outline-warning home-btn">
+            <i class="fa fa-subway train-icon"></i>Book Seats
+        </button></a>
+
+        <% if(booking) { %>
+            <h2 class="m-0 p-2"><i class="fa fa-check-circle train-icon highlight"></i>Ticket Confirmed, seats No.- <%=bookedSeats.toString()%></h2>
+        <% } %>
+
+        
+        <h3>Coach positions & seats availiabilty</h3>
+        <div class="seat-status">
+            <div class="seat-status-item">
+                <div class="seat-status-box booked"></div>
+                Booked
+            </div>
+            <div class="seat-status-item">
+                <div class="seat-status-box vacant"></div>
+                Vacant
+            </div>
+            <div class="seat-status-item">
+                <div class="seat-status-box user-seats"></div>
+                Your Seats
+            </div>
+        </div>
+        <div class="coach-container row">
+            <div class="coach col-lg-4">
+                <div class="train-info">
+                    <%=train.name%> (<%=train.trainNumber%>) | <span id="jdate"></span>
+                </div>
+
+                <%  for(let i = 0; i < 12; i++){ %>
+                    <div class="coach-row" coach-row="<%=i%>">
+                    <%  for(let j = 0; j < 7 && (i*7) + j < 80; j++){ %>
+                        <% if(booking && seats[(i*7) + j].status === 'U') { %>
+                            <div class="coach-seat user-seats"><%=(i*7)+j%></div>
+                        <% }else if(seats[(i*7) + j].isBooked) {%>
+                            <div class="coach-seat booked"><%=(i*7)+j%></div>
+                        <% }else{ %>
+                            <div class="coach-seat vacant"><%=(i*7)+j%></div>
+                        <% } %>
+                    <%  } %>
+                    </div>    
+                <%  } %>
+                <!-- <div class="coach-row">
+                    <div class="coach-seat booked">0</div>
+                    <div class="coach-seat vacant">1</div>
+                    <div class="coach-seat vacant">2</div>
+                    <div class="coach-seat booked">3</div>
+                    <div class="coach-seat user-seats">4</div>
+                    <div class="coach-seat user-seats">5</div>
+                    <div class="coach-seat user-seats">6</div>
+                </div> -->
+               
+            </div>
+        </div>
+        
+
+    </div>
+</main>
+<script>
+    const journeyDate = document.getElementById('jdate');
+    journeyDate.innerText = formatDate();
+
+    function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+    }
+
+    function formatDate(date = new Date()) {
+    return [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+    ].join('-');
+    }
+</script>
+<%- include('partials/footer') %>

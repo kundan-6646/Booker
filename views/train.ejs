@@ -25,10 +25,12 @@
                 <div class="seat-status-box vacant"></div>
                 Vacant
             </div>
-            <div class="seat-status-item">
-                <div class="seat-status-box user-seats"></div>
-                Your Seats
-            </div>
+            <% if(booking) { %>
+                <div class="seat-status-item">
+                    <div class="seat-status-box user-seats"></div>
+                    Your Seats
+                </div>
+            <% } %>
         </div>
         <div class="coach-container row">
             <div class="coach col-lg-4">

@@ -35,6 +35,16 @@ h2, h3 {
     padding: 0 1rem;
 }
 
+@media (max-width: 768px) {
+    .header {
+        padding: 3px;
+    }
+
+    h3 {
+        font-size: 20px !important;
+    }
+}
+
 .bold-text {
     color: #000;
     font-weight: bold;

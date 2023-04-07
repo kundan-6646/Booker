@@ -98,8 +98,8 @@ app.get('/book-some-seats/:trainNumber', function(req, res) {
         });
 
         let seats = foundTrains[trainIdx].seats;
-        const seatsToBook = [56, 57, 58, 59, 60, 61, 62, 49, 50, 51, 52, 35, 36, 37, 38, 39];
-        const seatsTounBook = [7, 8, 9, 13]
+        const seatsToBook = [17, 18, 19];
+        const seatsTounBook = [12, 13]
         seats.forEach(s => {
             seatsToBook.forEach(sn => {
                 if(s.seatNumber === sn) {

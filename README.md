@@ -29,7 +29,7 @@ This is a web-app to book train tickets
 
 
 
-## Book Seat Algorithm Explained
+## Book Seats Algorithm Explained
 
 - One person can reserve up to 7 seats at a time.
 - If person is reserving seats, the priority will be to book them in one row.
@@ -38,14 +38,16 @@ This is a web-app to book train tickets
 - User can book as many tickets as she/he wants until the coach is full.
 - Different stages of Algorithm
   - Stage-1: Book Seats in row if available then return
-  - Stage-2: Book Seats in such a way that nearby seats are booked then return, `Graph Based Algorithm`
+  - Stage-2: Book Seats in such a way that nearby seats are booked then return, using `Graph Based Algorithm`.
   - Stage-3: If not found seats in row or any connected group of seats.
-  - Stage-4: Then try to book maximum number of seats which are nearby if possible then return.
+  - Stage-4: Then try to book maximum number of seats nearby if possible then return.
 
 ### Application Screeshots
 ![image](/public/screenshots/home.png)
 <br>
 ![image](/public/screenshots/train.png)
+<br>
+![image](/public/screenshots/booking.png)
 
 ## Follow Me
 

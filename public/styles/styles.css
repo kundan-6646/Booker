@@ -10,7 +10,6 @@ main {
 }
 
 h2, h3 {
-    padding: 10px 0;
     text-align: center;
 }
 
@@ -18,12 +17,14 @@ h2, h3 {
     border-radius: 12px;
     background-color: #262626;
     position: relative;
+    padding-top: 16px;
+    padding-bottom: 16px;
 }
 
 .home-btn {
     position: absolute;
     right: 16px;
-    top: 16px;
+    top: -63px;
 }
 
 .header{
@@ -74,7 +75,7 @@ label {
 }
 
 .alert {
-    opacity: 0;
+    opacity: 1;
 }
 
 .highlight {

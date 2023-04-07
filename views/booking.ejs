@@ -1,14 +1,14 @@
 <%- include("partials/header") -%>
 
 <main>
-    <div class="alert alert-warning" role="alert">
+    <div class="alert alert-warning container" role="alert">
         There are no seats available, try other trains.
     </div>
     <div class="container">
         <a href="/train/<%=trainNumber%>" target="_blank"><button class="btn btn-outline-warning home-btn">
             <i class="fa fa-subway train-icon"></i>View Your Train
         </button></a>
-        <h2 class="mt-4 mb-1">Train Ticket Booking</h2>
+        <h3 class="mb-4">Train Ticket Booking</h3>
         <div class="header">
             <h3><span class="bold-text">Train:</span> <%=trainName%> | <%=trainNumber%></h3>
         </div>
@@ -17,15 +17,15 @@
                 <input type="number"  id="availableSeats" hidden name="availableSeats" value="<%=availableSeats%>">
                 <div class="mb-3">
                   <div class="row">
-                    <div class="col-lg-4 col-sm-12">
+                    <div class="col-lg-4 col-sm-12 mb-2">
                         <label for="trainNumber" class="form-label">Train Number</label>
                         <input type="number" class="form-control" id="trainNumber" aria-describedby="emailHelp" value="<%=trainNumber%>" readonly name="trainNumber">
                     </div>
-                    <div class="col-lg-4 col-sm-12">
+                    <div class="col-lg-4 col-sm-12 mb-2">
                         <label for="date" class="form-label">Date of journey</label>
                         <input type="date" class="form-control" id="date" aria-describedby="emailHelp" readonly name="date">
                     </div>
-                    <div class="col-lg-4 col-sm-12">
+                    <div class="col-lg-4 col-sm-12 mb-2">
                         <label for="tier" class="form-label">Tier</label>
                         <select class="form-select" aria-label="Default select example" id="tier" name="tier">
                             <option value="SL">SL - Sleeper</option>

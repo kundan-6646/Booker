@@ -98,8 +98,8 @@ app.get('/book-some-seats/:trainNumber', function(req, res) {
         });
 
         let seats = foundTrains[trainIdx].seats;
-        const seatsToBook = [17, 18, 19];
-        const seatsTounBook = [12, 13]
+        const seatsToBook = [];
+        const seatsTounBook = [4, 5, 6, 8, 9, 36, 37, 38, 45, 46, 47, 48, 70, 71, 72, 73, 74, 75, 76];
         seats.forEach(s => {
             seatsToBook.forEach(sn => {
                 if(s.seatNumber === sn) {
@@ -253,7 +253,7 @@ function getAvailableSeats(seats, userSeatsCount) {
                 unReservedSeats.push(seatsMatrix[i][j].seatNumber);
 
                 if(unReservedSeats.length >= userSeatsCount) return unReservedSeats;
-            }else break;
+            }else unReservedSeats = [];
         }
     }
 
